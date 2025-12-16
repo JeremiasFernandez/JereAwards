@@ -1,18 +1,18 @@
 // Datos de los ganadores - ¡EDITA AQUÍ LOS NOMBRES!
 // Formato: 'winner-X' para ganador, 'winner-X-2' para 2º lugar, etc.
 const winners = {
+// AMIGO DEL AÑO (PRINCIPAL)
+    'winner-1': 'Nay',
+    'winner-1-2': 'Chiara',
+    'winner-1-3': 'Renzo',
+    'winner-1-4': 'Facu',
+
+    
     // AMIGO PROMESA DEL AÑO
     'winner-2': 'Nay',
     'winner-2-2': 'Victor',
     'winner-2-3': 'Pepe',
     'winner-2-4': 'Elizabet',
-
-    
-    // AMIGO DEL AÑO (PRINCIPAL)
-    'winner-1': 'Nay',
-    'winner-1-2': 'Chiara',
-    'winner-1-3': 'Renzo',
-    'winner-1-4': 'Facu',
     
     // SALIDA DEL AÑO
     'winner-3': 'Abasto con Katherine',
