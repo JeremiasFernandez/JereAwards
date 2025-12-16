@@ -119,12 +119,18 @@ main {
     border-radius: 10px;
     border-left: 5px solid var(--gold-color);
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    transition: box-shadow 0.3s ease;
 }
 
-.year-section:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 6px 25px rgba(0, 0, 0, 0.4);
+@media (prefers-reduced-motion: no-preference) {
+    .year-section {
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    
+    .year-section:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 6px 25px rgba(0, 0, 0, 0.4);
+    }
 }
 
 .year-container {

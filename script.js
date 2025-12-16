@@ -1,5 +1,9 @@
 // Smooth scrolling for navigation links
 document.addEventListener('DOMContentLoaded', function() {
+    // Constants
+    const NAVIGATION_OFFSET = 100;
+    const INTERSECTION_MARGIN = '-50px';
+    
     // Add active state to navigation links
     const navLinks = document.querySelectorAll('.nav-links a');
     const sections = document.querySelectorAll('section');
@@ -12,7 +16,7 @@ document.addEventListener('DOMContentLoaded', function() {
             const sectionTop = section.offsetTop;
             const sectionHeight = section.clientHeight;
             
-            if (window.scrollY >= sectionTop - 100) {
+            if (window.scrollY >= sectionTop - NAVIGATION_OFFSET) {
                 current = section.getAttribute('id');
             }
         });
@@ -31,7 +35,7 @@ document.addEventListener('DOMContentLoaded', function() {
     // Add animation on scroll
     const observerOptions = {
         threshold: 0.1,
-        rootMargin: '0px 0px -50px 0px'
+        rootMargin: `0px 0px ${INTERSECTION_MARGIN} 0px`
     };
 
     const observer = new IntersectionObserver(function(entries) {
