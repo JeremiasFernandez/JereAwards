@@ -1,7 +1,7 @@
 // Datos de ganadores 2024 (edita cuando tengas los resultados definitivos)
 const winners = {
-	1: { first: 'Chiara', second: 'Katherine', third: 'Facundo', fourth: 'Lourdes' },
-	2: { first: 'Katherine', second: 'Facundo', third: 'Avi', fourth: 'Lucia' },
+	1: { first: 'Katherine', second: 'Facundo', third: 'Avi', fourth: 'Lucia' },
+    2: { first: 'Chiara', second: 'Katherine', third: 'Facundo', fourth: 'Lourdes' },
 	3: { first: 'Ecoparque (Avi)', second: 'Granjita (Avi, Fer)', third: 'Quinta de la plata', fourth: '?' },
 	4: { first: 'Mar', second: '?', third: '?', fourth: '?' },
 	5: { first: 'Cumpleaños Sorpresa', second: 'Tomando tereres con avi bajo la tormenta', third: 'Guada se le cayo la subte', fourth: 'Mi profe me dijo que mi corte quedo flama' },
