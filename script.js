@@ -29,8 +29,17 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
-    // Listen to scroll events
-    window.addEventListener('scroll', highlightNavigation);
+    // Listen to scroll events with throttling for performance
+    let ticking = false;
+    window.addEventListener('scroll', function() {
+        if (!ticking) {
+            window.requestAnimationFrame(function() {
+                highlightNavigation();
+                ticking = false;
+            });
+            ticking = true;
+        }
+    });
 
     // Add animation on scroll
     const observerOptions = {
