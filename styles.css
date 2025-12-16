@@ -66,6 +66,12 @@ header {
     background-color: rgba(255, 215, 0, 0.1);
 }
 
+.nav-links a.active {
+    color: var(--gold-color);
+    background-color: rgba(255, 215, 0, 0.15);
+    border-bottom: 2px solid var(--gold-color);
+}
+
 /* Main content */
 main {
     max-width: 1200px;
