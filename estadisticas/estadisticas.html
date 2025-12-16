@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Estadísticas - Jere Awards</title>
+    <link rel="stylesheet" href="estadisticas_styles.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="background-texture"></div>
+
+    <header class="topbar">
+        <div class="logo"><i class="fas fa-crown"></i> Jere Awards</div>
+        <nav class="nav">
+            <a href="../main.html">Inicio</a>
+            <a href="../2024/Index.html">2024</a>
+            <a href="../2025/Index.html">2025</a>
+            <a href="estadisticas.html" class="active">Estadísticas</a>
+        </nav>
+    </header>
+
+    <main class="stats-container">
+        <section class="section-head">
+            <h1><i class="fas fa-chart-line"></i> Estadísticas Históricas</h1>
+            <p class="subtitle">Récords y datos de todas las ediciones de Jere Awards</p>
+        </section>
+
+        <!-- Tabla de Apariciones -->
+        <section class="table-section">
+            <h2 class="table-title">📊 Apariciones Totales</h2>
+            <p class="table-desc">Cantidad de veces que cada participante ha sido nominado en cualquier posición.</p>
+            <div class="table-wrapper">
+                <table class="stats-table" id="appearancesTable">
+                    <thead>
+                        <tr>
+                            <th>Posición</th>
+                            <th>Nombre</th>
+                            <th>Apariciones</th>
+                        </tr>
+                    </thead>
+                    <tbody id="appearancesBody">
+                        <!-- Generado por JS -->
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- Tabla de Ganadores -->
+        <section class="table-section">
+            <h2 class="table-title">🏆 Ranking de Ganadores</h2>
+            <p class="table-desc">Ordenado por "Amigo del Año" (👑), luego por "Amigo Promesa" (⭐), y finalmente por total de premios.</p>
+            <div class="table-wrapper">
+                <table class="stats-table winners-table" id="winnersTable">
+                    <thead>
+                        <tr>
+                            <th>Ranking</th>
+                            <th>Nombre</th>
+                            <th class="gold-col">👑 Amigo del Año</th>
+                            <th class="star-col">⭐ Amigo Promesa</th>
+                            <th>🏅 Total Premios</th>
+                            <th>📊 Apariciones</th>
+                        </tr>
+                    </thead>
+                    <tbody id="winnersBody">
+                        <!-- Generado por JS -->
+                    </tbody>
+                </table>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <p>&copy; 2024-2025 Jere Awards</p>
+        <div><a href="../main.html">Volver al inicio</a></div>
+    </footer>
+
+    <script src="estadisticas.js"></script>
+</body>
+</html>

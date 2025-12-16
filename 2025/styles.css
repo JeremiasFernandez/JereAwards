@@ -44,15 +44,55 @@ body {
     50% { opacity: 1; }
 }
 
-/* Header */
-.header {
+/* Topbar */
+.topbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 18px 32px;
+    position: sticky;
+    top: 0;
+    backdrop-filter: blur(12px);
+    background: rgba(15, 20, 30, 0.85);
+    border-bottom: 1px solid rgba(212, 175, 55, 0.3);
+    z-index: 100;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+}
+.logo {
+    font-weight: 700;
+    letter-spacing: 1px;
+    font-size: 1.2rem;
+    color: #d4af37;
+    text-transform: uppercase;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+.logo:hover { color: #f0e68c; }
+.logo i { margin-right: 8px; }
+.nav {
+    display: flex;
+    gap: 8px;
+}
+.nav a {
+    padding: 8px 16px;
+    font-size: 0.95rem;
+    color: #e6e6e6;
+    text-decoration: none;
+    border-radius: 6px;
+    transition: background 0.2s, color 0.2s;
+}
+.nav a:hover { background: rgba(212, 175, 55, 0.15); color: #d4af37; }
+.nav a.active { background: rgba(212, 175, 55, 0.2); color: #d4af37; font-weight: 600; }
+
+/* Page Header (title section below topbar) */
+.page-header {
     text-align: center;
-    padding: 60px 20px;
-    background: linear-gradient(180deg, rgba(26, 26, 46, 0.9) 0%, rgba(15, 52, 96, 0.8) 100%);
-    border-bottom: 3px solid #d4af37;
+    padding: 50px 20px 30px;
+    background: linear-gradient(180deg, rgba(26, 26, 46, 0.6) 0%, rgba(15, 52, 96, 0.4) 100%);
+    border-bottom: 2px solid rgba(212, 175, 55, 0.4);
     position: relative;
     z-index: 2;
-    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.4);
 }
 
 .header-content {
@@ -430,4 +470,17 @@ body {
     .main-card .card-front h3 {
         font-size: 1.5em;
     }
+}
+
+@media (max-width: 768px) {
+    .topbar { padding: 14px 20px; }
+    .logo { font-size: 1.1rem; }
+    .nav { gap: 6px; }
+    .nav a { padding: 6px 12px; font-size: 0.9rem; }
+}
+
+@media (max-width: 640px) {
+    .topbar { flex-direction: column; gap: 12px; padding: 16px; }
+    .nav { flex-wrap: wrap; justify-content: center; }
+    .page-header { padding: 40px 15px 25px; }
 }
