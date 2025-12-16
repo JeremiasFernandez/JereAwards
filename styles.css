@@ -1,0 +1,433 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+    color: #ecf0f1;
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+
+/* Fondo con estrellas animadas */
+.stars {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 1;
+}
+
+.stars::before {
+    content: '';
+    position: absolute;
+    width: 2px;
+    height: 2px;
+    background: white;
+    border-radius: 50%;
+    box-shadow: 
+        100px 200px white, 200px 100px white, 300px 300px white,
+        400px 150px white, 500px 250px white, 600px 100px white,
+        700px 200px white, 800px 300px white, 100px 400px white,
+        250px 500px white, 500px 400px white, 700px 450px white,
+        900px 100px white, 150px 600px white, 450px 100px white;
+    animation: twinkle 3s infinite;
+}
+
+@keyframes twinkle {
+    0%, 100% { opacity: 0.3; }
+    50% { opacity: 1; }
+}
+
+/* Header */
+.header {
+    text-align: center;
+    padding: 60px 20px;
+    background: linear-gradient(180deg, rgba(26, 26, 46, 0.9) 0%, rgba(15, 52, 96, 0.8) 100%);
+    border-bottom: 3px solid #d4af37;
+    position: relative;
+    z-index: 2;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
+}
+
+.header-content {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.main-title {
+    font-size: 3.5em;
+    font-weight: bold;
+    background: linear-gradient(45deg, #d4af37, #f0e68c, #d4af37);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-shadow: 2px 2px 4px rgba(212, 175, 55, 0.3);
+    margin-bottom: 15px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+.subtitle {
+    font-size: 1.3em;
+    color: #c0c0c0;
+    font-style: italic;
+    letter-spacing: 1px;
+}
+
+/* Contenedor principal */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 60px 20px;
+    position: relative;
+    z-index: 2;
+}
+
+/* Secciones de categorías */
+.category-section {
+    margin-bottom: 80px;
+}
+
+.section-title {
+    text-align: center;
+    font-size: 2.2em;
+    margin-bottom: 50px;
+    color: #d4af37;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    border-bottom: 2px solid #d4af37;
+    padding-bottom: 20px;
+    position: relative;
+}
+
+.section-title::before,
+.section-title::after {
+    content: '✦';
+    margin: 0 15px;
+    font-size: 1.2em;
+}
+
+/* Grid de tarjetas */
+.cards-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 40px;
+    margin-bottom: 40px;
+}
+
+.main-grid {
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+}
+
+.award-card {
+    cursor: pointer;
+    height: 500px;
+    position: relative;
+}
+
+.award-card > div {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+/* Frente de la tarjeta */
+
+.card-front,
+.card-back {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 28px;
+    border-radius: 15px;
+    box-shadow: 0 15px 45px rgba(0, 0, 0, 0.4);
+    transition: none;
+}
+
+
+.card-front {
+    background: linear-gradient(135deg, #0f3460 0%, #16213e 100%);
+    border: 2px solid #d4af37;
+    text-align: center;
+    z-index: 2;
+}
+
+.award-card.flipped .card-front {
+    display: none;
+}
+
+
+.card-back {
+    background: linear-gradient(135deg, #d4af37 0%, #f0e68c 50%, #d4af37 100%);
+    color: #1a1a2e;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 10px 8px;
+    overflow: hidden;
+    z-index: 1;
+    display: none;
+}
+
+.award-card.flipped .card-back {
+    display: flex;
+}
+
+.card-front h3 {
+    font-size: 1.8em;
+    margin-top: 20px;
+    color: #d4af37;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.card-icon {
+    font-size: 4em;
+    color: #d4af37;
+    animation: float 3s ease-in-out infinite;
+}
+
+.card-icon.gold {
+    color: #ffd700;
+    text-shadow: 0 0 20px rgba(255, 215, 0, 0.6);
+}
+
+@keyframes float {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-20px); }
+}
+
+.reveal-hint {
+    color: #c0c0c0;
+    font-size: 0.9em;
+    margin-top: 15px;
+    font-style: italic;
+}
+
+.card-back.gold-back {
+    background: linear-gradient(135deg, #ffd700 0%, #ffed4e 50%, #ffd700 100%);
+}
+
+/* Contenedor de posiciones */
+.positions-container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    max-height: 430px;
+    overflow-y: auto;
+    padding: 0 2px;
+}
+
+.position {
+    padding: 5px 6px;
+    border-radius: 5px;
+    text-align: center;
+    background: rgba(26, 26, 46, 0.1);
+    border: 1px solid #1a1a2e;
+    display: flex;
+    flex-direction: column;
+    gap: 1px;
+    flex-shrink: 0;
+}
+
+.position-label {
+    font-size: 0.7em;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 0.2px;
+    color: #1a1a2e;
+    margin: 0;
+    line-height: 1;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.position-name {
+    font-size: 0.8em;
+    font-weight: bold;
+    color: #1a1a2e;
+    word-wrap: break-word;
+    margin: 0;
+    line-height: 1;
+}
+
+.position.gold {
+    background: linear-gradient(135deg, rgba(26, 26, 46, 0.2), rgba(255, 215, 0, 0.15));
+    border: 2px solid #1a1a2e;
+}
+
+.position.silver {
+    background: rgba(192, 192, 192, 0.15);
+    border: 2px solid #c0c0c0;
+}
+
+.position.bronze {
+    background: rgba(205, 127, 50, 0.15);
+    border: 2px solid #cd7f32;
+}
+
+.position.fourth {
+    background: rgba(70, 130, 180, 0.15);
+    border: 2px solid #4682b4;
+}
+
+/* Tarjetas principales */
+.main-card .card-front {
+    border: 3px solid #ffd700;
+    background: linear-gradient(135deg, #1a2a45 0%, #162a3f 100%);
+}
+
+.main-card .card-front h3 {
+    color: #ffd700;
+    font-size: 2em;
+}
+
+.main-card .card-back {
+    background: linear-gradient(135deg, #ffd700 0%, #ffed4e 50%, #ffd700 100%);
+}
+
+/* Footer */
+.footer {
+    text-align: center;
+    padding: 30px 20px;
+    background: linear-gradient(180deg, rgba(15, 52, 96, 0.8) 0%, rgba(26, 26, 46, 0.9) 100%);
+    border-top: 3px solid #d4af37;
+    color: #c0c0c0;
+    position: relative;
+    z-index: 2;
+    margin-top: 40px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .main-title {
+        font-size: 2.5em;
+    }
+
+    .subtitle {
+        font-size: 1.1em;
+    }
+
+    .section-title {
+        font-size: 1.8em;
+    }
+
+    .cards-grid {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+
+    .main-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .award-card {
+        height: 350px;
+    }
+
+    .card-front h3 {
+        font-size: 1.4em;
+    }
+
+    .card-icon {
+        font-size: 3em;
+    }
+
+    .positions-container {
+        gap: 10px;
+    }
+
+    .position {
+        padding: 10px 12px;
+    }
+
+    .position-label {
+        font-size: 0.8em;
+    }
+
+    .position-name {
+        font-size: 0.9em;
+    }
+}
+
+@media (max-width: 480px) {
+    .main-title {
+        font-size: 1.8em;
+    }
+
+    .subtitle {
+        font-size: 0.9em;
+    }
+
+    .header {
+        padding: 40px 15px;
+    }
+
+    .section-title {
+        font-size: 1.4em;
+        margin-bottom: 30px;
+    }
+
+    .cards-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .award-card {
+        height: 380px;
+    }
+
+    .card-front,
+    .card-back {
+        padding: 20px 15px;
+    }
+
+    .card-front h3 {
+        font-size: 1.3em;
+        margin-top: 15px;
+    }
+
+    .card-icon {
+        font-size: 2.5em;
+    }
+
+    .reveal-hint {
+        font-size: 0.85em;
+        margin-top: 10px;
+    }
+
+    .positions-container {
+        gap: 8px;
+    }
+
+    .position {
+        padding: 8px 10px;
+        border-radius: 6px;
+    }
+
+    .position-label {
+        font-size: 0.75em;
+    }
+
+    .position-name {
+        font-size: 0.85em;
+    }
+
+    .main-card .card-front h3 {
+        font-size: 1.5em;
+    }
+}
